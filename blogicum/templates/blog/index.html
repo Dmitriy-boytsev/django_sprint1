@@ -1,30 +1,9 @@
 {% extends "base.html" %}
 
-{% load static%}
-
 {% block title %}Лента записей{% endblock %}
 {% block content %}
-    <h1>Лента записей</h1>                        
-    <!-- Перебираем в цикле все посты -->
-    <article>
-        {% for postik in post_lst %}
-        <hr>
-      <ul>
-        <li>
-          Место: {{ postik.location }}          
-        </li>
-        <li>
-          Дата: {{ postik.date }}
-        </li>
-        <li>
-          Категория: <a href="{% url 'blog:category_posts' postik.category %}">{{ postik.category }}</a>
-        </li>
-      </ul>          
-      <!-- Первые 10 слов -->
-      <p>
-        {{ postik.text|truncatewords:10 }}
-      </p>
-      <a href="{% url 'blog:post_detail' postik.id %}">Читать полный текст</a>
-    </article>
-    {% endfor %}
+  <h1>Лента записей</h1>   
+  {% for post in post_lst %}                     
+    {% include 'includes/article.html' %}
+  {% endfor %}
 {% endblock %}

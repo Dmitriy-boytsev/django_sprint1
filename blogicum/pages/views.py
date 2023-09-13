@@ -2,10 +2,8 @@ from django.shortcuts import render
 
 
 def about(request):
-    template = 'pages/about.html'
-    return render(request, template)
+    return render(request, 'pages/about.html')
 
 
 def rules(request):
-    template = 'pages/rules.html'
-    return render(request, template)
+    return render(request, 'pages/rules.html')
