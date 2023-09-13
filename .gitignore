@@ -152,3 +152,6 @@ media/
 build_tests/
 yap_testing
 html/img/img/
+
+# папка со статикой проекта
+blogicum/static_dev/
